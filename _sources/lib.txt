@@ -12,6 +12,14 @@ lib.PUlSe_bash_utilities module
     :undoc-members:
     :show-inheritance:
 
+lib.PUlSe_color module
+----------------------
+
+.. automodule:: lib.PUlSe_color
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 lib.PUlSe_directories module
 ----------------------------
 
