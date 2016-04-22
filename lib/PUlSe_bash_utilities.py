@@ -6,6 +6,32 @@
 import os
 import shutil
 
+def rm(filename, error=False, log=None):
+  """ Remove `file`.
+
+    Remove `file`.
+
+    Args:
+        filename (str): Name of the file to remove.
+        error (bool): If False any error will be suppressed.
+        log (Log): Log Class where all info will be stored.
+
+    Returns:
+        error: In the case `error` is equal to True a possible error is 
+          returned.
+  """
+
+  if log:
+    log.add_action(action = "Remove file", text = filename)
+
+  try:
+    os.remove(filename)
+  except OSError, e:
+    if error:
+      return e
+
+
+
 def rmdir(directory, error=False, log=None, all_content=False):
   """ Remove `directory`.
 

@@ -22,6 +22,25 @@ def test_mkdir():
     pbash.mkdir("_tmp/test3", error = True)
   except OSError:
     assert True  
+
+  
+def test_rmdir():
+  """
+    Test rm Function.
+  """
+  pbash.touch("_tmp.txt")
+  pbash.rm("_tmp.txt")
+  assert True
+  
+  log = plog.Log()
+  pbash.touch("_tmp.txt")
+  pbash.rm("_tmp.txt", log=log)
+  pbash.rm("_tmp.txt")
+  try:
+    pbash.rm("_tmp.txt", error = True)
+  except OSError:
+    assert True
+    
   
 def test_rmdir():
   """
