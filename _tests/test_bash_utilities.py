@@ -24,7 +24,7 @@ def test_mkdir():
     assert True  
 
   
-def test_rmdir():
+def test_rm():
   """
     Test rm Function.
   """
