@@ -2,6 +2,8 @@
   This is a Class to deal with strings.
 """
 
+from inspect import currentframe
+
 def get_name_inside(  line,
                       begin_container="(",
                       end_container=")"):
@@ -54,3 +56,27 @@ def str2bool(string, YES=["yes", "true", "t", "1"]):
       YES (string): List of words accepted as true. They are no case sensitive.
     """
     return string.lower() in YES
+
+def retrieve_name(var):
+    """
+
+    Return the name of a variable os string.
+
+    Args:
+      var (string): variable.
+    """
+    callers_local_vars = currentframe().f_back.f_locals.items()
+    return [var_name for var_name, var_val in callers_local_vars if var_val is var][0]
+
+def replace_default_var(string, dictionary):
+    """
+
+    Replace the content of string with the names of dictionary.
+
+    Args:
+      string (string): text.
+      dictionary (dict): dictionary of terms to replace
+    """
+    for term in dictionary:
+        string = string.replace(term, dictionary[term])
+    return string
