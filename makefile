@@ -1,7 +1,7 @@
 .Phony: tests
 
 tests:
-	@nosetests --verbosity=2 _tests/
+	@./_utilities/test.py
 
 # .ONESHELL:
 GH_PAGES_SOURCES = _doc/source _doc/Makefile
