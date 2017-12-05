@@ -26,7 +26,7 @@ def test_get_name_inside():
 def test_fill_dictionary_with_config_parser():
   """
     Test fill_dictionary_with_config_parser Function.
-  """  
+  """
   config = ConfigParser.RawConfigParser()
   config.add_section('Section')
   config.set('Section', 'entry1', 'val1')
@@ -37,4 +37,3 @@ def test_fill_dictionary_with_config_parser():
   assert dictionary['entry1'] == 'val1'
   assert dictionary['entry2'] == 'val2'
   assert dictionary['entry3'] == 'val3'
-
